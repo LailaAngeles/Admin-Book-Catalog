@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/write_page"
+    android:background="#1C1C1C"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Back Button -->
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="54dp"
+        android:layout_height="38dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="30dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="Back"
+        android:scaleType="fitCenter"
+        android:src="@drawable/back" />
+
+
+    <!-- Search Bar beside Back Button -->
+    <EditText
+        android:id="@+id/search_bar"
+        android:layout_width="0dp"
+        android:layout_height="49dp"
+        android:layout_alignTop="@id/backButton"
+        android:layout_toEndOf="@id/backButton"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="13dp"
+        android:layout_marginEnd="11dp"
+        android:background="@drawable/search_bar_bg"
+        android:hint="Search Stories"
+        android:paddingStart="16dp"
+        android:textColor="#000000"
+        android:textSize="22sp" />
+
+    <!-- ScrollView containing the book covers -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/contentrecycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="content"
+        android:layout_below="@id/search_bar"
+        android:layout_marginTop="16dp"
+        android:padding="8dp"
+        android:clipToPadding="false" />
+    <ProgressBar
+        android:id="@+id/load"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Large"/>
+
+</RelativeLayout>

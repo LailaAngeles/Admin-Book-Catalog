@@ -1,0 +1,246 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    android:fillViewport="true"
+    android:layout_height="match_parent"
+    android:background="#1C1C1C"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/EditstoryInfo"
+        android:background="#1C1C1C"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Header Container -->
+        <RelativeLayout
+            android:id="@+id/headerContainer"
+            android:layout_width="match_parent"
+            android:layout_height="107dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="16dp">
+
+            <!-- Back Button -->
+
+            <ImageButton
+                android:id="@+id/editBackBtn"
+                android:layout_width="54dp"
+                android:layout_height="38dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="19dp"
+                android:layout_marginTop="-6dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Back"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/back"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/textViewEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="sans-serif-condensed-light"
+                android:letterSpacing="0.1"
+                android:text="Edit Story Info"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+
+            <!-- Delete Button -->
+            <ImageButton
+                android:id="@+id/deleteBtn"
+                android:layout_width="48dp"
+                android:layout_height="32dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="22dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Delete"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/delete"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/coverFrame"
+            android:layout_width="382dp"
+            android:layout_height="216dp"
+            android:layout_below="@id/headerContainer"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="7dp">
+            <!-- Cover Image -->
+            <ImageView
+                android:id="@+id/editcoverIcon"
+                android:layout_width="131dp"
+                android:layout_height="181dp"
+                android:layout_below="@id/headerContainer"
+                android:layout_gravity="start|bottom"
+                android:layout_marginLeft="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="#00FFFFFF"
+                android:src="@drawable/adstory" />
+
+            <!-- Edit Cover Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/editCoverBtn"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="match_parent"
+                android:layout_height="216dp"
+                android:layout_below="@id/headerContainer"
+
+                android:backgroundTint="#001C1C1C"
+                android:gravity="center_vertical|end"
+                android:paddingEnd="16dp"
+                android:text="Edit Book COVER"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+        </FrameLayout>
+
+        <!-- Story Title -->
+        <EditText
+            android:id="@+id/editTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:padding="12dp"
+            android:layout_below="@id/coverFrame"
+            android:backgroundTint="@android:color/darker_gray"
+            android:hint="Story Title"
+            android:inputType="text"
+            android:textColor="@color/white"
+            android:textColorHint="@android:color/darker_gray" />
+
+        <!-- Author -->
+        <EditText
+            android:id="@+id/editAuthor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:padding="12dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/editTitle"
+            android:hint="Author"
+            android:inputType="text"
+            android:backgroundTint="@android:color/darker_gray"
+            android:textColor="@color/white"
+            android:textColorHint="@android:color/darker_gray" />
+
+        <!-- Description -->
+        <EditText
+            android:id="@+id/editDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@id/editAuthor"
+            android:layout_margin="16dp"
+            android:backgroundTint="@android:color/darker_gray"
+            android:hint="Story Description"
+            android:inputType="textMultiLine"
+            android:maxLines="3"
+            android:padding="12dp"
+            android:textColor="@color/white"
+            android:textColorHint="@android:color/darker_gray"  />
+
+        <!-- Year Released -->
+        <EditText
+            android:id="@+id/editYear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:padding="12dp"
+            android:layout_below="@id/editDescription"
+            android:backgroundTint="@android:color/darker_gray"
+            android:hint="Year Released"
+            android:inputType="number"
+            android:textColor="@color/white"
+            android:textColorHint="@android:color/darker_gray" />
+
+        <!-- Publisher -->
+        <EditText
+            android:id="@+id/editPublisher"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:padding="12dp"
+            android:layout_below="@id/editYear"
+
+            android:backgroundTint="@android:color/darker_gray"
+            android:hint="Publisher"
+            android:inputType="text"
+            android:textColor="@color/white"
+            android:textColorHint="@android:color/darker_gray" />
+
+        <!-- Tags -->
+        <EditText
+            android:id="@+id/editTags"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:padding="12dp"
+            android:layout_below="@id/editPublisher"
+            android:backgroundTint="@android:color/darker_gray"
+            android:hint="Tags"
+            android:inputType="text"
+            android:textColor="@color/white"
+            android:textColorHint="@android:color/darker_gray" />
+
+        <!-- Tag Preview -->
+        <TextView
+            android:id="@+id/tagPreview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_below="@id/editTags"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:padding="12sp"
+            android:text=""
+            android:textColor="#FF9800"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            android:visibility="visible" />
+
+        <!-- Category Spinner -->
+        <Spinner
+            android:id="@+id/editCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tagPreview"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:spinnerMode="dropdown"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <!-- Save Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/update"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_below="@id/editCategory"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="Update"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:backgroundTint="#1C1C1C"
+            app:cornerRadius="12dp"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:contentDescription="Update"
+            app:strokeColor="#FFFFFF"
+            app:strokeWidth="2dp" />
+    </RelativeLayout>
+</ScrollView>
